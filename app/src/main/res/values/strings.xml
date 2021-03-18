@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SchoolTips</string>
+
+    <string name="interrogation">?</string>
+
+    <string name="menu">Menu</string>
+
+    <string name="next">Suivant</string>
+
+    <string name="calculs">%1$d %2$s %3$d =</string>
+    <string-array name="calculs_operations">
+        <item>+</item>
+        <item>-</item>
+        <item>×</item>
+        <item>÷</item>
+    </string-array>
+
 </resources>
