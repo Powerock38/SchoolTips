@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SchoolTips">
-        <activity android:name=".CalculsActivity"></activity>
+        <activity android:name=".CalculsParamActivity"></activity>
+        <activity android:name=".CalculsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

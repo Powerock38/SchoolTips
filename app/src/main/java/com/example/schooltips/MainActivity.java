@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalculsActivity.class);
+                Intent intent = new Intent(MainActivity.this, CalculsParamActivity.class);
                 startActivity(intent);
             }
         });
