@@ -7,13 +7,20 @@
 
     <string name="next">Suivant</string>
 
+    <string name="cest_parti">C\'est parti !</string>
+
+    <string name="calculs_titre">Mathématiques</string>
+
     <string name="calculs">%1$d %2$s %3$d =</string>
-    <string-array name="calculs_operations">
-        <item>+</item>
-        <item>-</item>
-        <item>×</item>
-        <item>÷</item>
-    </string-array>
+
+    <string name="calculs_op_plus">+</string>
+    <string name="calculs_op_moins">-</string>
+    <string name="calculs_op_mul">×</string>
+    <string name="calculs_op_div">÷</string>
+
+    <string name="format_1">1</string>
+    <string name="format_10">10</string>
+    <string name="format_100">100</string>
 
     <string name="highScore">Meilleur score : %1$d</string>
 
