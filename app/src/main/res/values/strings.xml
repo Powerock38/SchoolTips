@@ -22,6 +22,14 @@
     <string name="format_10">10</string>
     <string name="format_100">100</string>
 
+    <string name="home">Choisi un utilisateur ou créé toi un compte</string>
+
+    <string name="enter_name">Entre ton nom</string>
+    <string name="enter_firstname">Entre ton prenom</string>
+
+    <string name="back">Retour</string>
+    <string name="valider">Valider</string>
+
     <string name="highScore">Meilleur score : %1$d</string>
 
 </resources>

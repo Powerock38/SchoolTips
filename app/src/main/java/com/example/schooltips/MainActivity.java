@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,26 +33,23 @@ public class MainActivity extends AppCompatActivity {
         adapter = new UsersAdapter(this, new ArrayList<User>());
         userView.setAdapter(adapter);
 
-        /*
-         * la bdd bose problème ..
-         * c'est en cours (25/03/21)
-         */
+        // Instanciation de la BDD
         userDataBase = DatabaseUser.getInstance(getApplicationContext());
 
-        /* ittérer sur les users de la database pour les afficher pour les users ou bien se creer un compte
-        * le problème, c'est comment ?
-        *//*
-        for (User u : userList) {
-            Button userButton = new Button(this);
-            userButton.setText(u.getNom() + " " + u.getPrenom() + "\t" + "avatar");
-            userView.addView(userButton);
-        }*/
+        // Ajouter un événement click à la userView
+        userView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, CalculsParamActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        Button test = findViewById(R.id.button_test);
-        test.setOnClickListener(new View.OnClickListener() {
+        Button create = findViewById(R.id.creerCompte_button);
+        create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalculsParamActivity.class);
+                Intent intent = new Intent(MainActivity.this, CreerCompteActivity.class);
                 startActivity(intent);
             }
         });
