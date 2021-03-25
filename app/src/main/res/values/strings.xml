@@ -15,4 +15,6 @@
         <item>÷</item>
     </string-array>
 
+    <string name="highScore">Meilleur score : %1$d</string>
+
 </resources>
