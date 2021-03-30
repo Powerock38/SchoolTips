@@ -2,7 +2,6 @@ package com.example.schooltips;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -26,10 +25,10 @@ public class CalculsParamActivity extends AppCompatActivity {
         nbPickerNbOp.setMaxValue(20);
 
         RadioGroup formatAGroup = findViewById(R.id.format_a);
-        formatAGroup.setOnClickListener(new View.OnClickListener() {
+        formatAGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                switch (formatAGroup.getCheckedRadioButtonId()) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
                     case R.id.a_1:
                         formatA = 1;
                         break;
@@ -44,10 +43,10 @@ public class CalculsParamActivity extends AppCompatActivity {
         });
 
         RadioGroup formatBGroup = findViewById(R.id.format_b);
-        formatAGroup.setOnClickListener(new View.OnClickListener() {
+        formatBGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                switch (formatBGroup.getCheckedRadioButtonId()) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
                     case R.id.b_1:
                         formatB = 1;
                         break;
@@ -62,10 +61,10 @@ public class CalculsParamActivity extends AppCompatActivity {
         });
 
         RadioGroup operationGroup = findViewById(R.id.operation);
-        formatAGroup.setOnClickListener(new View.OnClickListener() {
+        operationGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                switch (operationGroup.getCheckedRadioButtonId()) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
                     case R.id.plus:
                         operation = Operation.add;
                         break;

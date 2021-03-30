@@ -2,13 +2,14 @@ package com.example.schooltips;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
@@ -17,11 +18,13 @@ public class CalculsActivity extends AppCompatActivity {
     static public final String FORMAT_A_KEY = "FORMAT_A_KEY";
     static public final String FORMAT_B_KEY = "FORMAT_B_KEY";
     static public final String NB_QUESTION_KEY = "NB_QUESTION_KEY";
+    static public final String LISTE_QUESTION_KEY = "LISTE_QUESTION_KEY";
 
     private String op;
     private Calculs calculs;
     private TextView question;
     private EditText answer;
+    private Operation operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +34,23 @@ public class CalculsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int formatA = intent.getIntExtra(FORMAT_A_KEY, 1);
         int formatB = intent.getIntExtra(FORMAT_B_KEY, 1);
-        Operation operation = (Operation) intent.getSerializableExtra(OPERATION_KEY);
+        operation = (Operation) intent.getSerializableExtra(OPERATION_KEY);
         int nbQuestions = intent.getIntExtra(NB_QUESTION_KEY, 1);
 
-        Toast.makeText(this, "operation : " + operation.name(), Toast.LENGTH_SHORT).show();
+        if (intent.getExtras().containsKey(LISTE_QUESTION_KEY)) {
+            ArrayList<CoupleOperandes> listeQuestions = (ArrayList<CoupleOperandes>) intent.getSerializableExtra(LISTE_QUESTION_KEY);
+            calculs = new Calculs(operation, listeQuestions);
+        } else {
+            calculs = new Calculs(formatA, formatB, operation, nbQuestions);
+        }
 
         question = findViewById(R.id.question);
         answer = findViewById(R.id.answer);
 
-        calculs = new Calculs(formatA, formatB, operation, nbQuestions);
-
         switch (operation) {
+            case add:
+                op = getString(R.string.calculs_op_plus);
+                break;
             case subtract:
                 op = getString(R.string.calculs_op_moins);
                 break;
@@ -51,8 +60,6 @@ public class CalculsActivity extends AppCompatActivity {
             case divide:
                 op = getString(R.string.calculs_op_div);
                 break;
-            default: // add
-                op = getString(R.string.calculs_op_plus);
         }
 
         nextCalculView(null);
@@ -76,7 +83,15 @@ public class CalculsActivity extends AppCompatActivity {
             answer.getText().clear();
             question.setText(getString(R.string.calculs, calculs.getOp1(), op, calculs.getOp2()));
         } else {
-            Toast.makeText(this, "vous avez " + calculs.getBonnesRep() + " bonnes réponses", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ResultatsActivity.class);
+            intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, calculs.getNbQuestions());
+            ArrayList<CoupleOperandes> erreurs = calculs.getListeErreurs();
+            intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.size());
+            if (!erreurs.isEmpty()) {
+                intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
+                intent.putExtra(ResultatsActivity.OPERATION_KEY, operation);
+            }
+            startActivity(intent);
             finish();
         }
     }

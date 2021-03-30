@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ResultatsActivity">
+
+    <TextView
+        android:id="@+id/resultat_xsurx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/xsurx"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/resultat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/all_good"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/corriger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/corriger" />
+
+    <Button
+        android:id="@+id/retour_exos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retour_exos" />
+
+</LinearLayout>
