@@ -17,6 +17,9 @@ public class User implements Serializable {
     @ColumnInfo(name = "prenom")
     private String prenom;
 
+    @ColumnInfo(name = "highScore")
+    private int highScore;
+
     /*A finir !!!*/
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB, name = "avatar")
     private byte[] avatar;
@@ -46,6 +49,14 @@ public class User implements Serializable {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public int getHighScore() {
+        return highScore;
+    }
+
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
     }
 
     public byte[] getAvatar() {
