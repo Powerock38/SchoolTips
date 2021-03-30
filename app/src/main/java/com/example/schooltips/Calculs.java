@@ -1,31 +1,38 @@
 package com.example.schooltips;
 
-import java.util.Locale;
 import java.util.Random;
 
 public class Calculs {
     private static final Random random = new Random();
-    private int op1Format;
-    private int op2Format;
+    private final int op1Format;
+    private final int op2Format;
     private int op1;
     private int op2;
-    private Operation operation;
+    private final Operation operation;
     private int solution;
+    private int bonnesRep = 0;
+    private final int nbQuestions;
+    private int questionNb = 0;
 
 
-    public Calculs(int op1Format, int op2Format, Operation operation) {
+    public Calculs(int op1Format, int op2Format, Operation operation, int nbQuestions) {
         this.op1Format = op1Format;
         this.op2Format = op2Format;
         this.operation = operation;
-
-        nextCalcul();
+        this.nbQuestions = nbQuestions + 1;
     }
 
-    public void nextCalcul() {
+    public boolean nextCalcul(Integer previousAnswer) {
+        if (previousAnswer != null) {
+            if (previousAnswer == solution) {
+                bonnesRep++;
+            }
+        }
+
         op1 = random.nextInt(op1Format * 10 - 1) + 1;
         op2 = random.nextInt(op2Format * 10 - 1) + 1;
 
-        switch(operation) {
+        switch (operation) {
             case add:
                 solution = op1 + op2;
                 break;
@@ -42,6 +49,11 @@ public class Calculs {
                 solution = op1 / op2;
                 break;
         }
+
+        questionNb++;
+
+        // true tant qu'il reste des questions
+        return questionNb < nbQuestions;
     }
 
     public int getOp1() {
@@ -56,7 +68,9 @@ public class Calculs {
         return operation;
     }
 
-    public boolean checkSolution(int answer) {
-        return answer == solution;
+    public int getBonnesRep() {
+        return bonnesRep;
     }
+
+
 }
