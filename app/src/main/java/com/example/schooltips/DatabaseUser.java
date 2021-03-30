@@ -53,8 +53,8 @@ public class DatabaseUser {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            //init de la bdd
-            db.execSQL("INSERT INTO user (nom, prenom, highscore) VALUES(\"moi\", \"toi\", 1000);");
+            //init de la bdd pour les tests
+            //db.execSQL("INSERT INTO user (nom, prenom, highscore) VALUES(\"moi\", \"toi\", 1000);");
 
         }
     };
