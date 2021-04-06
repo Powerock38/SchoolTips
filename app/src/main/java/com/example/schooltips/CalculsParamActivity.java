@@ -21,77 +21,74 @@ public class CalculsParamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculs_param);
 
         NumberPicker nbPickerNbOp = findViewById(R.id.nb_op);
-        nbPickerNbOp.setMinValue(1); //5
+        nbPickerNbOp.setMinValue(5);
         nbPickerNbOp.setMaxValue(20);
 
         RadioGroup formatAGroup = findViewById(R.id.format_a);
-        formatAGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.a_1:
-                        formatA = 1;
-                        break;
-                    case R.id.a_10:
-                        formatA = 10;
-                        break;
-                    case R.id.a_100:
-                        formatA = 100;
-                        break;
-                }
+        formatAGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.a_1:
+                    formatA = 1;
+                    break;
+                case R.id.a_10:
+                    formatA = 10;
+                    break;
+                case R.id.a_100:
+                    formatA = 100;
+                    break;
             }
         });
 
         RadioGroup formatBGroup = findViewById(R.id.format_b);
-        formatBGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.b_1:
-                        formatB = 1;
-                        break;
-                    case R.id.b_10:
-                        formatB = 10;
-                        break;
-                    case R.id.b_100:
-                        formatB = 100;
-                        break;
-                }
+        formatBGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.b_1:
+                    formatB = 1;
+                    break;
+                case R.id.b_10:
+                    formatB = 10;
+                    break;
+                case R.id.b_100:
+                    formatB = 100;
+                    break;
             }
         });
 
         RadioGroup operationGroup = findViewById(R.id.operation);
-        operationGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.plus:
-                        operation = Operation.add;
-                        break;
-                    case R.id.moins:
-                        operation = Operation.subtract;
-                        break;
-                    case R.id.mul:
-                        operation = Operation.multiply;
-                        break;
-                    case R.id.div:
-                        operation = Operation.divide;
-                        break;
-                }
+        operationGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.plus:
+                    operation = Operation.add;
+                    break;
+                case R.id.moins:
+                    operation = Operation.subtract;
+                    break;
+                case R.id.mul:
+                    operation = Operation.multiply;
+                    break;
+                case R.id.div:
+                    operation = Operation.divide;
+                    break;
             }
         });
 
         Button go = findViewById(R.id.go);
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CalculsParamActivity.this, CalculsActivity.class);
-                intent.putExtra(CalculsActivity.FORMAT_A_KEY, formatA);
-                intent.putExtra(CalculsActivity.FORMAT_B_KEY, formatB);
-                intent.putExtra(CalculsActivity.OPERATION_KEY, operation);
-                intent.putExtra(CalculsActivity.NB_QUESTION_KEY, nbPickerNbOp.getValue());
-                startActivity(intent);
-            }
+        go.setOnClickListener(v -> {
+            Intent intent = new Intent(CalculsParamActivity.this, CalculsActivity.class);
+            intent.putExtra(CalculsActivity.FORMAT_A_KEY, formatA);
+            intent.putExtra(CalculsActivity.FORMAT_B_KEY, formatB);
+            intent.putExtra(CalculsActivity.OPERATION_KEY, operation);
+            intent.putExtra(CalculsActivity.NB_QUESTION_KEY, nbPickerNbOp.getValue());
+            startActivity(intent);
         });
+
+        Button retour = findViewById(R.id.retour);
+        retour.setOnClickListener(v -> {
+            Intent intent = new Intent(CalculsParamActivity.this, ChoixActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        //TODO: timer
     }
 }

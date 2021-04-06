@@ -1,7 +1,5 @@
 package com.example.schooltips;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -43,13 +41,19 @@ public class Calculs {
             }
         }
 
-        if(questionNb < nbQuestions) {
+        if (questionNb < nbQuestions) {
             if (listeQuestions != null) {
                 op1 = listeQuestions.get(questionNb).getA();
                 op2 = listeQuestions.get(questionNb).getB();
             } else {
-                op1 = random.nextInt(op1Format * 10 - 1) + 1;
-                op2 = random.nextInt(op2Format * 10 - 1) + 1;
+                int prOp1 = op1;
+                int prOp2 = op2;
+
+                do op1 = op1Format * random.nextInt(9);
+                while (op1 == 0 || op1 == prOp1);
+
+                do op2 = op2Format * random.nextInt(9);
+                while (op2 == 0 || op2 == prOp2);
             }
 
             switch (operation) {
@@ -86,6 +90,10 @@ public class Calculs {
 
     public int getNbQuestions() {
         return nbQuestions;
+    }
+
+    public int getQuestionNb() {
+        return questionNb;
     }
 
     public ArrayList<CoupleOperandes> getListeErreurs() {

@@ -1,73 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="40dp"
     tools:context=".CreerCompteActivity">
 
-    <!--il faut gérer la vu inscritpion .. à suivre-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="30dp"
-        android:text="Créé toi un compte"/>
+        android:text="@string/create_account"
+        android:textSize="30sp" />
 
-    <LinearLayout
-        android:id="@+id/Compte_name_layout"
+
+    <EditText
+        android:id="@+id/Compte_lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_lastname" />
+
+
+    <EditText
+        android:id="@+id/Compte_firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_firstname" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nom :"/>
-
-        <EditText
-            android:id="@+id/Compte_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="  ?   "/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Compte_firstname_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prénom :"/>
-
-        <EditText
-            android:id="@+id/Compte_firstname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="  ?   "/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/valider_inscription"
-            android:text="@string/valider"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/back_inscription"
-            android:text="@string/back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/valider_inscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/valider" />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -51,7 +51,7 @@ public class ResultatsActivity extends AppCompatActivity {
         retourExos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ResultatsActivity.this, MainActivity.class); // TODO : changer MainActivity.class
+                Intent intent = new Intent(ResultatsActivity.this, ChoixActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SchoolTips">
-        <activity android:name=".ResultatsActivity"></activity>
+        <activity android:name=".CultureActivity"></activity>
+        <activity android:name=".CultureParamActivity" />
+        <activity android:name=".ChoixActivity" />
+        <activity android:name=".ResultatsActivity" />
         <activity android:name=".CreerCompteActivity" />
         <activity android:name=".CalculsParamActivity" />
         <activity android:name=".CalculsActivity" />

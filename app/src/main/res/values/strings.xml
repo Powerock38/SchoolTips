@@ -1,15 +1,19 @@
 <resources>
     <string name="app_name">SchoolTips</string>
 
+    <string name="choose_exo">Choisis un exercice</string>
+
     <string name="interrogation">?</string>
 
-    <string name="menu">Menu</string>
+    <string name="abandon">Abandonner</string>
 
     <string name="next">Suivant</string>
 
     <string name="cest_parti">C\'est parti !</string>
 
     <string name="calculs_titre">Mathématiques</string>
+    <string name="culture_titre">Culture générale</string>
+    <string name="change_user">Changer d\'utilisateur</string>
 
     <string name="calculs">%1$d %2$s %3$d =</string>
 
@@ -33,12 +37,22 @@
 
     <string name="home">Choisi un utilisateur ou créé toi un compte</string>
 
-    <string name="enter_name">Entre ton nom</string>
-    <string name="enter_firstname">Entre ton prenom</string>
+    <string name="enter_lastname">Nom</string>
+    <string name="enter_firstname">Prénom</string>
+    <string name="error_lastname">Nom requis !</string>
+    <string name="error_firstname">Prénom requis !</string>
+
+    <string name="create_account">Créé ton compte !</string>
 
     <string name="back">Retour</string>
     <string name="valider">Valider</string>
 
     <string name="highScore">Meilleur score : %1$d</string>
+
+    <string name="nb_questions">Nombre de questions :</string>
+
+    <string name="theme1">Français</string>
+    <string name="theme2">Histoire</string>
+    <string name="theme3">Géographie</string>
 
 </resources>

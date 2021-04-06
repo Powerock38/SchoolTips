@@ -3,9 +3,9 @@ package com.example.schooltips;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +25,7 @@ public class CalculsActivity extends AppCompatActivity {
     private TextView question;
     private EditText answer;
     private Operation operation;
+    private TextView questionCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class CalculsActivity extends AppCompatActivity {
 
         question = findViewById(R.id.question);
         answer = findViewById(R.id.answer);
+        questionCounter = findViewById(R.id.questionNb);
 
         switch (operation) {
             case add:
@@ -61,6 +63,13 @@ public class CalculsActivity extends AppCompatActivity {
                 op = getString(R.string.calculs_op_div);
                 break;
         }
+
+        Button abandon = findViewById(R.id.abandon);
+        abandon.setOnClickListener(v -> {
+            Intent intent_abandon = new Intent(CalculsActivity.this, CalculsParamActivity.class);
+            startActivity(intent_abandon);
+            finish();
+        });
 
         nextCalculView(null);
     }
@@ -82,6 +91,7 @@ public class CalculsActivity extends AppCompatActivity {
         if (shouldAskMore) {
             answer.getText().clear();
             question.setText(getString(R.string.calculs, calculs.getOp1(), op, calculs.getOp2()));
+            questionCounter.setText(getString(R.string.xsurx, calculs.getQuestionNb() + 1, calculs.getNbQuestions()));
         } else {
             Intent intent = new Intent(this, ResultatsActivity.class);
             intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, calculs.getNbQuestions());
