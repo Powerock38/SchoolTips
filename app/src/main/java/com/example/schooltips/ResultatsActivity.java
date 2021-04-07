@@ -22,6 +22,7 @@ public class ResultatsActivity extends AppCompatActivity {
     static public final String ISCORRECTION_KEY = "ISCORRECTION_KEY";
 
     private int nbQuestions;
+    private int nbErreurs;
     private User user;
 
     // Database
@@ -39,7 +40,7 @@ public class ResultatsActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         nbQuestions = intent.getIntExtra(NB_QUESTIONS_KEY, 0);
-        int nbErreurs = intent.getIntExtra(NB_ERREURS_KEY, 0);
+        nbErreurs = intent.getIntExtra(NB_ERREURS_KEY, 0);
 
         Button retourExos = findViewById(R.id.retour_exos);
         Button corriger = findViewById(R.id.corriger);
@@ -91,7 +92,7 @@ public class ResultatsActivity extends AppCompatActivity {
 
         //////////////////////////
         // MAJ du user dans MyApplication
-        ((MyApplication) getApplication()).majUser(nbQuestions, getApplicationContext());
+        ((MyApplication) getApplication()).majUser(nbQuestions-nbErreurs, getApplicationContext());
 
         // Maj du USer dans la BDD
         MajUser maj = new MajUser();
