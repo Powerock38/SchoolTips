@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -64,7 +65,7 @@ public class ResultatsActivity extends AppCompatActivity {
             corriger.setVisibility(View.GONE);
         }
 
-        if(!intent.getExtras().containsKey(ResultatsActivity.OPERATION_KEY)) majUser();
+        if(!intent.getBooleanExtra(ISCORRECTION_KEY, true)) majUser();
 
         retourExos.setOnClickListener(new View.OnClickListener() {
             @Override
