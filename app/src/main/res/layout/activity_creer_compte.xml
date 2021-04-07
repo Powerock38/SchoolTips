@@ -30,7 +30,7 @@
             android:id="@+id/Compte_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  ?   "/>
+            android:hint="  ?   "/>
     </LinearLayout>
 
     <LinearLayout
@@ -48,7 +48,7 @@
             android:id="@+id/Compte_firstname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  ?   "/>
+            android:hint="  ?   "/>
     </LinearLayout>
 
     <LinearLayout

@@ -11,6 +11,12 @@ import java.util.List;
 @Dao
 public interface UserDao {
 
+    @Query("SELECT * FROM user WHERE id = :idUser LIMIT 1")
+    User getUser(int idUser);
+
+    @Query("UPDATE user SET highScore = :highScore WHERE id = :idUser")
+    void majHighScore(int idUser, int highScore);
+
     @Query("SELECT * FROM user")
     List<User> getAll();
 
@@ -25,5 +31,4 @@ public interface UserDao {
 
     @Update
     void update(User user);
-
 }

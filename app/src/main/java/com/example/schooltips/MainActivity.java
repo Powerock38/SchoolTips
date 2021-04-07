@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -36,10 +37,16 @@ public class MainActivity extends AppCompatActivity {
         // Instanciation de la BDD
         userDataBase = DatabaseUser.getInstance(getApplicationContext());
 
+        //Initialisation du user courant à NULL
+        ((MyApplication) getApplication()).setUser(null);
+
         // Ajouter un événement click à la userView
         userView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                User u = adapter.getItem(position);
+                //Set pour la classe MyApplication
+                ((MyApplication) getApplication()).setUser(u);
                 Intent intent = new Intent(MainActivity.this, CalculsParamActivity.class);
                 startActivity(intent);
             }

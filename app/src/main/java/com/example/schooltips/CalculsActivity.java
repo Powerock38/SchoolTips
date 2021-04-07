@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +19,12 @@ public class CalculsActivity extends AppCompatActivity {
     static public final String FORMAT_B_KEY = "FORMAT_B_KEY";
     static public final String NB_QUESTION_KEY = "NB_QUESTION_KEY";
 
+    private boolean shouldAskMore;
     private String op;
     private Calculs calculs;
     private TextView question;
     private EditText answer;
+    private Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class CalculsActivity extends AppCompatActivity {
 
         question = findViewById(R.id.question);
         answer = findViewById(R.id.answer);
+
+        next = findViewById(R.id.next);
 
         calculs = new Calculs(formatA, formatB, operation, nbQuestions);
 
@@ -59,7 +64,6 @@ public class CalculsActivity extends AppCompatActivity {
     }
 
     public void nextCalculView(View v) {
-        boolean shouldAskMore;
         if (v == null) {
             shouldAskMore = calculs.nextCalcul(null);
         } else {
@@ -77,6 +81,14 @@ public class CalculsActivity extends AppCompatActivity {
             question.setText(getString(R.string.calculs, calculs.getOp1(), op, calculs.getOp2()));
         } else {
             Toast.makeText(this, "vous avez " + calculs.getBonnesRep() + " bonnes réponses", Toast.LENGTH_SHORT).show();
+            Log.d("on click ? ", Boolean.toString(true));
+            Log.d("nb rep corect ", Integer.toString(calculs.getBonnesRep()));
+            if (calculs.toutCorrect()) {
+                User u = ((MyApplication) getApplication()).getUser();
+                Log.d("put in table ? ", Boolean.toString(false));
+                ((MyApplication) getApplication()).majUser(calculs.getBonnesRep(), getApplicationContext());
+                Log.d("put in table ? ", Boolean.toString(true));
+            }
             finish();
         }
     }

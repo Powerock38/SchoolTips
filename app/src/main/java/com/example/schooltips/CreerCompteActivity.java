@@ -45,11 +45,12 @@ public class CreerCompteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Instanciation de la BDD
-                DatabaseUser userDataBase = DatabaseUser.getInstance(getApplicationContext());
+                userDataBase = DatabaseUser.getInstance(getApplicationContext());
 
                 //Sauvegarde de l'utilisateur créé
                 saveUser();
 
+                //Création puis redirection vers l'activité suivante
                 Intent intent = new Intent(CreerCompteActivity.this, CalculsParamActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
@@ -58,20 +59,19 @@ public class CreerCompteActivity extends AppCompatActivity {
     }
 
     private void saveUser() {
-
         // Récupérer les informations contenues dans les vues
         final String sName = name.getText().toString().trim();
         final String sFirstName = firstname.getText().toString().trim();
 
         // Vérifier les informations fournies par l'utilisateur
         if (sName == " ? ") {
-            name.setError("Task required");
+            name.setError("Name required");
             name.requestFocus();
             return;
         }
 
         if (sFirstName == " ? ") {
-            firstname.setError("Desc required");
+            firstname.setError("First name required");
             firstname.requestFocus();
             return;
         }
@@ -84,17 +84,20 @@ public class CreerCompteActivity extends AppCompatActivity {
             @Override
             protected User doInBackground(Void... voids) {
 
-                // creating a task
-                User user = new User();
-                user.setNom(sName);
-                user.setPrenom(sFirstName);
+                //Création de l'utilisateur courant
+                User u = new User();
+                u.setNom(name.getText().toString());
+                u.setPrenom(firstname.getText().toString());
 
-                // adding to database
+                //Associtaion à l'activité gloable
+                ((MyApplication) getApplication()).setUser(u);
+
+                //Adding user to database
                 userDataBase.getAppDatabase()
                         .userDao()
-                        .insert(user);
+                        .insert(u);
 
-                return user;
+                return u;
             }
 
             @Override

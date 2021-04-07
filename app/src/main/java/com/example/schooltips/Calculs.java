@@ -1,5 +1,7 @@
 package com.example.schooltips;
 
+import android.util.Log;
+
 import java.util.Random;
 
 public class Calculs {
@@ -72,5 +74,6 @@ public class Calculs {
         return bonnesRep;
     }
 
+    public boolean toutCorrect() {return  (bonnesRep == nbQuestions-1);}
 
 }
