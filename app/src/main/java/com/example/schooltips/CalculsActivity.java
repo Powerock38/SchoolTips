@@ -105,6 +105,7 @@ public class CalculsActivity extends AppCompatActivity {
                 intent.putExtra(ResultatsActivity.OPERATION_KEY, operation);
             }
             intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
+            intent.putExtra(ResultatsActivity.EXERCICE_KEY, 0);
             startActivity(intent);
             finish();
         }

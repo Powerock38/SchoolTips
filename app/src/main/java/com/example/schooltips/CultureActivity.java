@@ -23,6 +23,7 @@ public class CultureActivity extends AppCompatActivity {
     private TextView questionTextView;
     private TextView questionCounter;
     private Quizz quizz;
+    private boolean isCorrection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,10 @@ public class CultureActivity extends AppCompatActivity {
         if (intent.getExtras().containsKey(LISTE_QUESTION_KEY)) {
             int[] listeQuestions = intent.getIntArrayExtra(LISTE_QUESTION_KEY);
             quizz = new Quizz(theme, listeQuestions);
+            isCorrection = true;
         } else {
             quizz = new Quizz(theme, nbQuestions);
+            isCorrection = false;
         }
 
         questionTextView = findViewById(R.id.question);
@@ -84,13 +87,14 @@ public class CultureActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(this, ResultatsActivity.class);
             intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, quizz.getNbQuestions());
-            ArrayList<Integer> erreurs = quizz.getListeErreurs();
-            intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.size());
-            if (!erreurs.isEmpty()) {
+            int[] erreurs = quizz.getListeErreurs();
+            intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.length);
+            if (erreurs.length > 0) {
                 intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
                 intent.putExtra(ResultatsActivity.THEME_KEY, quizz.getTheme());
             }
-            //intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
+            intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
+            intent.putExtra(ResultatsActivity.EXERCICE_KEY, 1);
             startActivity(intent);
             finish();
         }

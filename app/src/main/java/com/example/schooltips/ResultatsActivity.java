@@ -3,16 +3,11 @@ package com.example.schooltips;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
 
 public class ResultatsActivity extends AppCompatActivity {
     static public final String NB_QUESTIONS_KEY = "NB_QUESTIONS_KEY";
@@ -20,11 +15,14 @@ public class ResultatsActivity extends AppCompatActivity {
     static public final String LISTE_ERREURS_KEY = "LISTE_ERREURS_KEY";
     static public final String ISCORRECTION_KEY = "ISCORRECTION_KEY";
 
+    static public final String EXERCICE_KEY = "EXERCICE_KEY";
+
     static public final String OPERATION_KEY = "OPERATION_KEY";
     static public final String THEME_KEY = "THEME_KEY";
 
     private int nbQuestions;
     private int nbErreurs;
+    private int score;
     private User user;
 
     // Database
@@ -43,46 +41,54 @@ public class ResultatsActivity extends AppCompatActivity {
 
         nbQuestions = intent.getIntExtra(NB_QUESTIONS_KEY, 0);
         nbErreurs = intent.getIntExtra(NB_ERREURS_KEY, 0);
+        score = nbQuestions - nbErreurs;
 
         Button retourExos = findViewById(R.id.retour_exos);
         Button corriger = findViewById(R.id.corriger);
         TextView res = findViewById(R.id.resultat);
         TextView res_xsurx = findViewById(R.id.resultat_xsurx);
 
-        res_xsurx.setText(getString(R.string.xsurx, nbQuestions - nbErreurs, nbQuestions));
+        res_xsurx.setText(getString(R.string.xsurx, score, nbQuestions));
 
         if (nbErreurs > 0) {
             res.setText(getResources().getQuantityString(R.plurals.erreurs, nbErreurs));
-            corriger.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent newIntent = new Intent(ResultatsActivity.this, CalculsActivity.class);
+
+            int exercice = intent.getIntExtra(EXERCICE_KEY, 0);
+            corriger.setOnClickListener(v -> {
+                Intent newIntent;
+
+                if(exercice == 0) {
+                    newIntent = new Intent(ResultatsActivity.this, CalculsActivity.class);
                     newIntent.putExtra(CalculsActivity.LISTE_QUESTION_KEY, intent.getSerializableExtra(LISTE_ERREURS_KEY));
                     newIntent.putExtra(CalculsActivity.OPERATION_KEY, intent.getSerializableExtra(OPERATION_KEY));
-                    startActivity(newIntent);
-                    finish();
+                } else if(exercice == 1) {
+                    newIntent = new Intent(ResultatsActivity.this, CultureActivity.class);
+                    newIntent.putExtra(CultureActivity.LISTE_QUESTION_KEY, intent.getIntArrayExtra(LISTE_ERREURS_KEY));
+                    newIntent.putExtra(CultureActivity.THEME_KEY, intent.getSerializableExtra(THEME_KEY));
+                } else { //should never trigger, but just in case
+                    newIntent = new Intent(ResultatsActivity.this, ChoixActivity.class);
                 }
+
+                startActivity(newIntent);
+                finish();
             });
         } else {
             res.setText(getString(R.string.all_good));
             corriger.setVisibility(View.GONE);
         }
 
-        if(!intent.getBooleanExtra(ISCORRECTION_KEY, true)) majUser();
+        if (!intent.getBooleanExtra(ISCORRECTION_KEY, true)) majUser();
 
-        retourExos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ResultatsActivity.this, ChoixActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
+        retourExos.setOnClickListener(v -> {
+            Intent intent1 = new Intent(ResultatsActivity.this, ChoixActivity.class);
+            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent1);
+            finish();
         });
     }
 
     private void majUser() {
-        class MajUser extends  AsyncTask<Void, Void, Void> {
+        class MajUser extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 userDataBase.getAppDatabase()
@@ -92,11 +98,10 @@ public class ResultatsActivity extends AppCompatActivity {
             }
         }
 
-        //////////////////////////
         // MAJ du user dans MyApplication
-        ((MyApplication) getApplication()).majUser(nbQuestions-nbErreurs, getApplicationContext());
+        ((MyApplication) getApplication()).majUser(score, getApplicationContext());
 
-        // Maj du USer dans la BDD
+        // Maj du User dans la BDD
         MajUser maj = new MajUser();
         maj.execute();
     }

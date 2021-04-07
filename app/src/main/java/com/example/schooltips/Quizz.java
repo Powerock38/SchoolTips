@@ -126,8 +126,12 @@ public class Quizz {
         return questionNb;
     }
 
-    public ArrayList<Integer> getListeErreurs() {
-        return listeErreurs;
+    public int[] getListeErreurs() {
+        int[] ret = new int[listeErreurs.size()];
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = listeErreurs.get(i);
+        }
+        return ret;
     }
 
     public ThemeQuizz getTheme() {
