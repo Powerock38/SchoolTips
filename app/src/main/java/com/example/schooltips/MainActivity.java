@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 User u = adapter.getItem(position);
                 //Set pour la classe MyApplication
                 ((MyApplication) getApplication()).setUser(u);
-                Intent intent = new Intent(MainActivity.this, CalculsParamActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChoixActivity.class);
                 startActivity(intent);
             }
         });

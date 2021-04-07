@@ -10,8 +10,8 @@
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
-            <option value="/run/media/signoret/Windows/Users/signoret/Documents/05_Devoirs/05_2020-2021/04_S4/M4104-Android/SchoolTips" />
-            <option value="/run/media/signoret/Windows/Users/signoret/Documents/05_Devoirs/05_2020-2021/04_S4/M4104-Android/SchoolTips/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
