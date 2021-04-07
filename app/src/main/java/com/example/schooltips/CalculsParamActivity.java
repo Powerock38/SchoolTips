@@ -85,10 +85,9 @@ public class CalculsParamActivity extends AppCompatActivity {
         Button retour = findViewById(R.id.retour);
         retour.setOnClickListener(v -> {
             Intent intent = new Intent(CalculsParamActivity.this, ChoixActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         });
-
-        //TODO: timer
     }
 }
