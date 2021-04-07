@@ -33,7 +33,7 @@ public class ResultatsActivity extends AppCompatActivity {
 
         // Instanciation de la BDD
         userDataBase = DatabaseUser.getInstance(getApplicationContext());
-        user =  ((MyApplication) getApplication()).getUser();
+        user = ((MyApplication) getApplication()).getUser();
 
         Intent intent = getIntent();
 
@@ -60,11 +60,11 @@ public class ResultatsActivity extends AppCompatActivity {
                 }
             });
         } else {
-            majUser();
-
             res.setText(getString(R.string.all_good));
             corriger.setVisibility(View.GONE);
         }
+
+        if(!intent.getExtras().containsKey(ResultatsActivity.OPERATION_KEY)) majUser();
 
         retourExos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +79,6 @@ public class ResultatsActivity extends AppCompatActivity {
 
     private void majUser() {
         class MajUser extends  AsyncTask<Void, Void, Void> {
-
             @Override
             protected Void doInBackground(Void... voids) {
                 userDataBase.getAppDatabase()

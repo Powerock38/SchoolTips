@@ -29,7 +29,7 @@
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|bottom"
             android:text="@string/format_1"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/a_10"
@@ -39,7 +39,7 @@
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|bottom"
             android:text="@string/format_10"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/a_100"
@@ -49,7 +49,7 @@
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|bottom"
             android:text="@string/format_100"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
     </RadioGroup>
 
     <RadioGroup
@@ -64,21 +64,21 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/calculs_op_plus"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/moins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calculs_op_moins"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/mul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calculs_op_mul"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/div"
@@ -103,7 +103,7 @@
             android:drawableTop="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|top"
             android:text="@string/format_1"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/b_10"
@@ -113,7 +113,7 @@
             android:drawableTop="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|top"
             android:text="@string/format_10"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/b_100"
@@ -123,7 +123,7 @@
             android:drawableTop="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center_horizontal|top"
             android:text="@string/format_100"
-            android:textSize="20sp" />
+            android:textSize="15dp" />
     </RadioGroup>
 
     <NumberPicker
