@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +26,7 @@ public class CalculsActivity extends AppCompatActivity {
     private EditText answer;
     private Operation operation;
     private TextView questionCounter;
+    private boolean isCorrection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,10 @@ public class CalculsActivity extends AppCompatActivity {
         if (intent.getExtras().containsKey(LISTE_QUESTION_KEY)) {
             ArrayList<CoupleOperandes> listeQuestions = (ArrayList<CoupleOperandes>) intent.getSerializableExtra(LISTE_QUESTION_KEY);
             calculs = new Calculs(operation, listeQuestions);
+            isCorrection = true;
         } else {
             calculs = new Calculs(formatA, formatB, operation, nbQuestions);
+            isCorrection = false;
         }
 
         question = findViewById(R.id.question);
@@ -102,6 +104,7 @@ public class CalculsActivity extends AppCompatActivity {
                 intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
                 intent.putExtra(ResultatsActivity.OPERATION_KEY, operation);
             }
+            intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
             startActivity(intent);
             finish();
         }
