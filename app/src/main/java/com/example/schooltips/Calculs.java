@@ -1,7 +1,5 @@
 package com.example.schooltips;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -97,8 +95,6 @@ public class Calculs {
     public int getQuestionNb() {
         return questionNb;
     }
-
-    public boolean toutCorrect() {return  (listeErreurs.isEmpty());}
 
     public ArrayList<CoupleOperandes> getListeErreurs() {
         return listeErreurs;

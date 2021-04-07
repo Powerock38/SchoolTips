@@ -30,18 +30,28 @@
         android:id="@+id/answer1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        android:onClick="nextQuestionView" />
 
     <Button
         android:id="@+id/answer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        android:onClick="nextQuestionView" />
 
     <Button
         android:id="@+id/answer3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        android:onClick="nextQuestionView" />
+
+    <Button
+        android:id="@+id/answer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="nextQuestionView" />
 
 </LinearLayout>

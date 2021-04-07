@@ -18,8 +18,10 @@ public class ResultatsActivity extends AppCompatActivity {
     static public final String NB_QUESTIONS_KEY = "NB_QUESTIONS_KEY";
     static public final String NB_ERREURS_KEY = "NB_ERREURS_KEY";
     static public final String LISTE_ERREURS_KEY = "LISTE_ERREURS_KEY";
-    static public final String OPERATION_KEY = "OPERATION_KEY";
     static public final String ISCORRECTION_KEY = "ISCORRECTION_KEY";
+
+    static public final String OPERATION_KEY = "OPERATION_KEY";
+    static public final String THEME_KEY = "THEME_KEY";
 
     private int nbQuestions;
     private User user;
