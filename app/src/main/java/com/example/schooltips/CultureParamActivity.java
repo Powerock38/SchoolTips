@@ -25,6 +25,7 @@ public class CultureParamActivity extends AppCompatActivity {
         Button back = findViewById(R.id.back);
         back.setOnClickListener(v -> {
             Intent intent = new Intent(CultureParamActivity.this, ChoixActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         });

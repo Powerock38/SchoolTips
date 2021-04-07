@@ -29,8 +29,8 @@ public class ChoixActivity extends AppCompatActivity {
         });
 
         changeUser.setOnClickListener(v -> {
-            //TODO : disconnect user ?
             Intent intent = new Intent(ChoixActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         });

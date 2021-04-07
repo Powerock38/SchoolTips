@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,6 @@ public class CalculsActivity extends AppCompatActivity {
     static public final String NB_QUESTION_KEY = "NB_QUESTION_KEY";
     static public final String LISTE_QUESTION_KEY = "LISTE_QUESTION_KEY";
 
-    private boolean shouldAskMore;
     private String op;
     private Calculs calculs;
     private TextView question;
@@ -48,8 +48,6 @@ public class CalculsActivity extends AppCompatActivity {
 
         question = findViewById(R.id.question);
         answer = findViewById(R.id.answer);
-
-        calculs = new Calculs(formatA, formatB, operation, nbQuestions);
         questionCounter = findViewById(R.id.questionNb);
 
         switch (operation) {
@@ -78,6 +76,7 @@ public class CalculsActivity extends AppCompatActivity {
     }
 
     public void nextCalculView(View v) {
+        boolean shouldAskMore;
         if (v == null) {
             shouldAskMore = calculs.nextCalcul(null);
         } else {
