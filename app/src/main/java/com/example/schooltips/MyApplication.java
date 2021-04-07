@@ -24,7 +24,5 @@ public class MyApplication extends Application {
         // Instanciation de la BDD
         userDataBase = DatabaseUser.getInstance(c);
         user.setHighScore(user.getHighScore() + highScore);
-        //Maj dans la BDD
-        userDataBase.getAppDatabase().userDao().majHighScore(user.getId(), user.getHighScore());
     }
 }

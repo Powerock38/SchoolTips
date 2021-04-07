@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculs_titre"
-        android:textSize="20sp" />
+        android:textSize="20dp" />
 
     <RadioGroup
         android:id="@+id/format_a"
@@ -137,13 +137,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/cest_parti"
-        android:textSize="20sp" />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/retour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/back" />
+        android:text="@string/back"
+        android:textSize="15dp" />
 
 </LinearLayout>

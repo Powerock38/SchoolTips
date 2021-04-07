@@ -47,7 +47,7 @@
     <string name="back">Retour</string>
     <string name="valider">Valider</string>
 
-    <string name="highScore">Meilleur score : %1$d</string>
+    <string name="highScore">Score : %1$d</string>
 
     <string name="nb_questions">Nombre de questions :</string>
 
