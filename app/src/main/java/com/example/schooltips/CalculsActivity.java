@@ -2,6 +2,7 @@ package com.example.schooltips;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class CalculsActivity extends AppCompatActivity {
     static public final String FORMAT_B_KEY = "FORMAT_B_KEY";
     static public final String NB_QUESTION_KEY = "NB_QUESTION_KEY";
     static public final String LISTE_QUESTION_KEY = "LISTE_QUESTION_KEY";
+    static public final String TIMER_KEY = "TIMER_KEY";
 
     private String op;
     private Calculs calculs;
@@ -27,6 +29,8 @@ public class CalculsActivity extends AppCompatActivity {
     private Operation operation;
     private TextView questionCounter;
     private boolean isCorrection;
+    private int nbQuestionsDone = 0;
+    private CountDownTimer timerObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,22 @@ public class CalculsActivity extends AppCompatActivity {
                 break;
         }
 
+        TextView timer = findViewById(R.id.timer);
+        int time = intent.getIntExtra(TIMER_KEY, 0);
+
+        if(time > 0) {
+            timerObject = new CountDownTimer(time * 1000, 1000) {
+                public void onTick(long t) {
+                    timer.setText(getString(R.string.seconde, 1 + (t / 1000)));
+                }
+
+                public void onFinish() {
+                    byebye();
+                }
+            };
+            timerObject.start();
+        }
+
         Button abandon = findViewById(R.id.abandon);
         abandon.setOnClickListener(v -> {
             Intent intent_abandon = new Intent(CalculsActivity.this, CalculsParamActivity.class);
@@ -79,6 +99,7 @@ public class CalculsActivity extends AppCompatActivity {
 
     public void nextCalculView(View v) {
         boolean shouldAskMore;
+
         if (v == null) {
             shouldAskMore = calculs.nextCalcul(null);
         } else {
@@ -89,6 +110,7 @@ public class CalculsActivity extends AppCompatActivity {
                 rep = 0;
             }
             shouldAskMore = calculs.nextCalcul(rep);
+            nbQuestionsDone++;
         }
 
         if (shouldAskMore) {
@@ -96,18 +118,28 @@ public class CalculsActivity extends AppCompatActivity {
             question.setText(getString(R.string.calculs, calculs.getOp1(), op, calculs.getOp2()));
             questionCounter.setText(getString(R.string.xsurx, calculs.getQuestionNb() + 1, calculs.getNbQuestions()));
         } else {
-            Intent intent = new Intent(this, ResultatsActivity.class);
-            intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, calculs.getNbQuestions());
-            ArrayList<CoupleOperandes> erreurs = calculs.getListeErreurs();
-            intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.size());
-            if (!erreurs.isEmpty()) {
-                intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
-                intent.putExtra(ResultatsActivity.OPERATION_KEY, operation);
-            }
-            intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
-            intent.putExtra(ResultatsActivity.EXERCICE_KEY, 0);
-            startActivity(intent);
-            finish();
+            byebye();
         }
+    }
+
+    private void byebye() {
+        Intent intent = new Intent(this, ResultatsActivity.class);
+        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, nbQuestionsDone);
+        ArrayList<CoupleOperandes> erreurs = calculs.getListeErreurs();
+        intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.size());
+        if (!erreurs.isEmpty()) {
+            intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
+            intent.putExtra(ResultatsActivity.OPERATION_KEY, operation);
+        }
+        intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
+        intent.putExtra(ResultatsActivity.EXERCICE_KEY, 0);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        if(timerObject != null) timerObject.cancel();
     }
 }

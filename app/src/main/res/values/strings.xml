@@ -17,6 +17,11 @@
 
     <string name="calculs">%1$d %2$s %3$d =</string>
 
+    <string name="seconde">%1$d s</string>
+    <string name="minute">%1$d min</string>
+    <string name="minute_30secondes">%1$d min 30 s</string>
+    <string name="notime">non</string>
+
     <string name="calculs_op_plus">+</string>
     <string name="calculs_op_moins">-</string>
     <string name="calculs_op_mul">×</string>
@@ -32,6 +37,7 @@
         <item quantity="other">Il y a des erreurs !</item>
     </plurals>
     <string name="all_good">Bien joué ! Tu as tout juste.</string>
+    <string name="no_question">Hehooo ?</string>
     <string name="retour_exos">Retour aux exerices</string>
     <string name="corriger">Corriger les erreurs</string>
 
@@ -49,10 +55,13 @@
 
     <string name="highScore">Score : %1$d</string>
 
-    <string name="nb_questions">Nombre de questions :</string>
-
     <string name="theme1">Français</string>
     <string name="theme2">Histoire</string>
     <string name="theme3">Géographie</string>
+
+    <string name="timer">Temps :</string>
+    <string name="nbquestions">Combien de questions ?</string>
+
+
 
 </resources>

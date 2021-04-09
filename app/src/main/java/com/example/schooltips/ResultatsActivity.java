@@ -57,11 +57,11 @@ public class ResultatsActivity extends AppCompatActivity {
             corriger.setOnClickListener(v -> {
                 Intent newIntent;
 
-                if(exercice == 0) {
+                if (exercice == 0) {
                     newIntent = new Intent(ResultatsActivity.this, CalculsActivity.class);
                     newIntent.putExtra(CalculsActivity.LISTE_QUESTION_KEY, intent.getSerializableExtra(LISTE_ERREURS_KEY));
                     newIntent.putExtra(CalculsActivity.OPERATION_KEY, intent.getSerializableExtra(OPERATION_KEY));
-                } else if(exercice == 1) {
+                } else if (exercice == 1) {
                     newIntent = new Intent(ResultatsActivity.this, CultureActivity.class);
                     newIntent.putExtra(CultureActivity.LISTE_QUESTION_KEY, intent.getIntArrayExtra(LISTE_ERREURS_KEY));
                     newIntent.putExtra(CultureActivity.THEME_KEY, intent.getSerializableExtra(THEME_KEY));
@@ -73,8 +73,11 @@ public class ResultatsActivity extends AppCompatActivity {
                 finish();
             });
         } else {
-            res.setText(getString(R.string.all_good));
             corriger.setVisibility(View.GONE);
+            if (nbQuestions == 0) {
+                res_xsurx.setVisibility(View.GONE);
+                res.setText(getString(R.string.no_question));
+            } else res.setText(getString(R.string.all_good));
         }
 
         if (!intent.getBooleanExtra(ISCORRECTION_KEY, true)) majUser();

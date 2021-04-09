@@ -2,6 +2,7 @@ package com.example.schooltips;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,18 +13,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static java.lang.Integer.parseInt;
-
 public class CultureActivity extends AppCompatActivity {
+    static public final String LISTE_QUESTION_KEY = "LISTE_QUESTION_KEY";
+    static public final String TIMER_KEY = "TIMER_KEY";
     static public String NB_QUESTIONS_KEY = "NB_QUESTIONS_KEY";
     static public String THEME_KEY = "THEME_KEY";
-    static public final String LISTE_QUESTION_KEY = "LISTE_QUESTION_KEY";
-
     private Button[] answers;
     private TextView questionTextView;
     private TextView questionCounter;
     private Quizz quizz;
     private boolean isCorrection;
+    private int nbQuestionsDone = 0;
+    private CountDownTimer timerObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,23 @@ public class CultureActivity extends AppCompatActivity {
         answers[2] = findViewById(R.id.answer3);
         answers[3] = findViewById(R.id.answer4);
 
+        TextView timer = findViewById(R.id.timer);
+        int time = intent.getIntExtra(TIMER_KEY, 0);
+
+        if (time > 0) {
+            timerObject = new CountDownTimer(time * 1000, 1000) {
+                public void onTick(long t) {
+                    timer.setText(getString(R.string.seconde, 1 + (t / 1000)));
+                }
+
+                public void onFinish() {
+                    byebye();
+                }
+            };
+            timerObject.start();
+        }
+
+
         Button abandon = findViewById(R.id.abandon);
         abandon.setOnClickListener(v -> {
             Intent intent_abandon = new Intent(CultureActivity.this, CultureParamActivity.class);
@@ -64,12 +82,13 @@ public class CultureActivity extends AppCompatActivity {
 
     public void nextQuestionView(View v) {
         Button answer = (Button) v;
-
         boolean shouldAskMore;
+
         if (v == null) {
             shouldAskMore = quizz.nextQuestion(null);
         } else {
             shouldAskMore = quizz.nextQuestion(answer.getText().toString());
+            nbQuestionsDone++;
         }
 
         if (shouldAskMore) {
@@ -79,24 +98,34 @@ public class CultureActivity extends AppCompatActivity {
             ArrayList<String> propositions = new ArrayList<>(Arrays.asList(question.getPropositions()));
             Collections.shuffle(propositions);
 
-            for(int i = 0; i < answers.length; i++) {
+            for (int i = 0; i < answers.length; i++) {
                 answers[i].setText(propositions.get(i));
             }
 
             questionCounter.setText(getString(R.string.xsurx, quizz.getQuestionNb() + 1, quizz.getNbQuestions()));
         } else {
-            Intent intent = new Intent(this, ResultatsActivity.class);
-            intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, quizz.getNbQuestions());
-            int[] erreurs = quizz.getListeErreurs();
-            intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.length);
-            if (erreurs.length > 0) {
-                intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
-                intent.putExtra(ResultatsActivity.THEME_KEY, quizz.getTheme());
-            }
-            intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
-            intent.putExtra(ResultatsActivity.EXERCICE_KEY, 1);
-            startActivity(intent);
-            finish();
+            byebye();
         }
+    }
+
+    private void byebye() {
+        Intent intent = new Intent(this, ResultatsActivity.class);
+        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, nbQuestionsDone);
+        int[] erreurs = quizz.getListeErreurs();
+        intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.length);
+        if (erreurs.length > 0) {
+            intent.putExtra(ResultatsActivity.LISTE_ERREURS_KEY, erreurs);
+            intent.putExtra(ResultatsActivity.THEME_KEY, quizz.getTheme());
+        }
+        intent.putExtra(ResultatsActivity.ISCORRECTION_KEY, isCorrection);
+        intent.putExtra(ResultatsActivity.EXERCICE_KEY, 1);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        if(timerObject != null) timerObject.cancel();
     }
 }

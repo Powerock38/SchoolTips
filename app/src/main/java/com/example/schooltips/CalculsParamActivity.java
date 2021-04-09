@@ -2,11 +2,9 @@ package com.example.schooltips;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +12,32 @@ public class CalculsParamActivity extends AppCompatActivity {
     private int formatA = 1;
     private int formatB = 1;
     private Operation operation = Operation.add;
+    private NumberPicker timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculs_param);
+
+        timer = findViewById(R.id.timer);
+        timer.setMinValue(0); // disabled, 30s, 1min, 1min30, 2min, 2min30
+        timer.setMaxValue(5);
+
+        int steps = timer.getMaxValue() - timer.getMinValue() + 1;
+        String[] displayedValues = new String[steps];
+
+        for (int i = 0; i < steps; i++) {
+            if (i == 0) {
+                displayedValues[i] = getString(R.string.notime);
+            } else if (i == 1) {
+                displayedValues[i] = getString(R.string.seconde, 30);
+            } else if (i % 2 > 0) { // 2, 4
+                displayedValues[i] = getString(R.string.minute_30secondes, i / 2);
+            } else { // 3, 5
+                displayedValues[i] = getString(R.string.minute, (i + 1) / 2);
+            }
+        }
+        timer.setDisplayedValues(displayedValues);
 
         NumberPicker nbPickerNbOp = findViewById(R.id.nb_op);
         nbPickerNbOp.setMinValue(5);
@@ -79,6 +98,7 @@ public class CalculsParamActivity extends AppCompatActivity {
             intent.putExtra(CalculsActivity.FORMAT_B_KEY, formatB);
             intent.putExtra(CalculsActivity.OPERATION_KEY, operation);
             intent.putExtra(CalculsActivity.NB_QUESTION_KEY, nbPickerNbOp.getValue());
+            intent.putExtra(CalculsActivity.TIMER_KEY, timer.getValue() * 30);
             startActivity(intent);
         });
 
