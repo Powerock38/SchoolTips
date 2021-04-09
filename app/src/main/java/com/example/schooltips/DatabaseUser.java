@@ -2,19 +2,28 @@ package com.example.schooltips;
 
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import java.util.concurrent.Executors;
-
 public class DatabaseUser {
     // Instance unique permettant de faire le lien avec la base de données
     private static DatabaseUser instance;
+    // Objet permettant de populate (remplir) la base de données à sa création
+    RoomDatabase.Callback roomDatabaseCallback = new RoomDatabase.Callback() {
 
+        // Called when the database is created for the first time.
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+
+            //init de la bdd pour les tests
+            //db.execSQL("INSERT INTO user (nom, prenom, highscore) VALUES(\"moi\", \"toi\", 1000);");
+
+        }
+    };
     // Objet représentant la base de données de votre application
     private AppDatabase appDatabase;
 
@@ -44,18 +53,4 @@ public class DatabaseUser {
     public AppDatabase getAppDatabase() {
         return appDatabase;
     }
-
-    // Objet permettant de populate (remplir) la base de données à sa création
-    RoomDatabase.Callback roomDatabaseCallback = new RoomDatabase.Callback() {
-
-        // Called when the database is created for the first time.
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-
-            //init de la bdd pour les tests
-            //db.execSQL("INSERT INTO user (nom, prenom, highscore) VALUES(\"moi\", \"toi\", 1000);");
-
-        }
-    };
 }

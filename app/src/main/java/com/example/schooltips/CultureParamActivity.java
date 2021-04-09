@@ -28,7 +28,7 @@ public class CultureParamActivity extends AppCompatActivity {
 
         for (int i = 0; i < steps; i++) {
             if (i == 0) {
-                displayedValues[i] = getString(R.string.notime);
+                displayedValues[i] = getString(R.string.nolimit);
             } else if (i == 1) {
                 displayedValues[i] = getString(R.string.seconde, 30);
             } else if (i % 2 > 0) { // 2, 4

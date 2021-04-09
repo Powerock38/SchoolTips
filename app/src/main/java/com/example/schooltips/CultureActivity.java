@@ -23,8 +23,8 @@ public class CultureActivity extends AppCompatActivity {
     private TextView questionCounter;
     private Quizz quizz;
     private boolean isCorrection;
-    private int nbQuestionsDone = 0;
     private CountDownTimer timerObject;
+    private boolean shouldAskMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,9 @@ public class CultureActivity extends AppCompatActivity {
                 }
 
                 public void onFinish() {
+                    while (shouldAskMore) {
+                        shouldAskMore = quizz.nextQuestion("");
+                    }
                     byebye();
                 }
             };
@@ -82,13 +85,11 @@ public class CultureActivity extends AppCompatActivity {
 
     public void nextQuestionView(View v) {
         Button answer = (Button) v;
-        boolean shouldAskMore;
 
         if (v == null) {
             shouldAskMore = quizz.nextQuestion(null);
         } else {
             shouldAskMore = quizz.nextQuestion(answer.getText().toString());
-            nbQuestionsDone++;
         }
 
         if (shouldAskMore) {
@@ -110,7 +111,7 @@ public class CultureActivity extends AppCompatActivity {
 
     private void byebye() {
         Intent intent = new Intent(this, ResultatsActivity.class);
-        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, nbQuestionsDone);
+        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, quizz.getNbQuestions());
         int[] erreurs = quizz.getListeErreurs();
         intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.length);
         if (erreurs.length > 0) {
@@ -126,6 +127,6 @@ public class CultureActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        if(timerObject != null) timerObject.cancel();
+        if (timerObject != null) timerObject.cancel();
     }
 }

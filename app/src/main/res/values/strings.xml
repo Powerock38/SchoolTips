@@ -20,7 +20,7 @@
     <string name="seconde">%1$d s</string>
     <string name="minute">%1$d min</string>
     <string name="minute_30secondes">%1$d min 30 s</string>
-    <string name="notime">non</string>
+    <string name="nolimit">sans</string>
 
     <string name="calculs_op_plus">+</string>
     <string name="calculs_op_moins">-</string>
@@ -61,7 +61,6 @@
 
     <string name="timer">Temps :</string>
     <string name="nbquestions">Combien de questions ?</string>
-
 
 
 </resources>

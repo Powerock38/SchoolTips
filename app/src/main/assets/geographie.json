@@ -1,362 +1,362 @@
 [
-    {
-        "id": 0,
-        "question": "Dans quel océan se déverse l'Amazone, de loin le plus élevé de tous les fleuves de la planète ?",
-        "propositions": [
-            "Océan Atlantique",
-            "Océan Arctique",
-            "Océan Indien",
-            "Océan Pacifique"
-        ],
-        "anecdote": "La démesure de l'Amazone s'apprécie aussi en constatant qu'aucun pont ni barrage ne le franchit sur des milliers de kilomètres.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 1,
-        "question": "Où peut-on se rendre dans la plus grande île et le plus petit continent du monde ?",
-        "propositions": [
-            "Australie",
-            "Asie",
-            "Afrique",
-            "Europe"
-        ],
-        "anecdote": "Sa population est principalement concentrée dans les grandes villes côtières de Sydney, Melbourne, Brisbane, Perth et Adélaïde.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 2,
-        "question": "Où peut-on marcher sur la place Tian'anmen, au sud de la porte de la Paix céleste ?",
-        "propositions": [
-            "Pékin",
-            "Shanghai",
-            "Shenzhen",
-            "Canton"
-        ],
-        "anecdote": "La place Tian'anmen doit notamment sa célébrité aux nombreux événements qui s'y sont déroulés dans l'histoire chinoise.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 3,
-        "question": "Quelle est la plus grande ville du Grand-Duché de Luxembourg ainsi que sa capitale ?",
-        "propositions": [
-            "Luxembourg",
-            "Wiltz",
-            "Diekirch",
-            "Vianden"
-        ],
-        "anecdote": "Après avoir été surnommée « la Gibraltar du Nord » en raison de sa forteresse, elle est dite aujourd'hui le « Coeur vert de l'Europe ».",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 4,
-        "question": "Quel pays sans côte océanique partage en toute tranquillité le lac Majeur avec l'Italie ?",
-        "propositions": [
-            "La Suisse",
-            "Le Danemark",
-            "La Pologne",
-            "L'Autriche"
-        ],
-        "anecdote": "Le lac Majeur est célèbre par ses sites touristiques comme les îles Borromées et les îles de Brissago.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 5,
-        "question": "Où se trouve Ankara, ville nouvelle aux origines pourtant très anciennes ?",
-        "propositions": [
-            "En Turquie",
-            "En Inde",
-            "En Birmanie",
-            "Au Pakistan"
-        ],
-        "anecdote": "Certains vestiges hittites découverts dans la citadelle attestent la présence d'une cité (Ankuva) du temps de l'Empire hittite.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 6,
-        "question": "Sur quel tropique se trouve Taiwan, connue comme la République de Chine ?",
-        "propositions": [
-            "Cancer",
-            "Sagittaire",
-            "Capricorne",
-            "Taureau"
-        ],
-        "anecdote": "Taïwan fut officiellement gouverné par la Chine de 1683 à 1895, puis cédé au Japon par le traité de Shimonoseki en 1895.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 7,
-        "question": "Quel est le pays entouré par le Lichtenstein, l'Italie, l'Autriche, l'Allemagne et la France ?",
-        "propositions": [
-            "La Suisse",
-            "Les Pays-Bas",
-            "La Grèce",
-            "La Hongrie"
-        ],
-        "anecdote": "La Suisse est un pays sans côte océanique mais dispose d'un accès direct à la mer par le Rhin (Convention de Mannheim).",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 8,
-        "question": "Dans quel pays allez-vous si vous partez à la recherche du comte Dragul, en Transylvanie ?",
-        "propositions": [
-            "En Roumanie",
-            "En Bulgarie",
-            "En Hongrie",
-            "En Australie"
-        ],
-        "anecdote": "Écrit à la fin du XIXe siècle, « Dracula » est un roman épistolaire dont le personnage principal est un vampire.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 9,
-        "question": "Quel tropique indiqué sur les cartes terrestres passe entre la Floride et Cuba ?",
-        "propositions": [
-            "Tropique du Cancer",
-            "Tropique du Lion",
-            "Tropique du Loup",
-            "Tropique du Chat"
-        ],
-        "anecdote": "Le tropique du Cancer porte ce nom car, il y a environ 2000 ans, le Soleil entrait dans la constellation du Cancer lors du solstice de juin.",
-        "difficulty": "débutant"
-    },
-    {
-        "id": 10,
-        "question": "Quel archipel du Pacifique est constitué de plus de 7100 îles et îlots formant un état ?",
-        "propositions": [
-            "Les Philippines",
-            "L'Indonésie",
-            "La Malaisie",
-            "La Birmanie"
-        ],
-        "anecdote": "Un peu plus de 2000 seulement sont habitées, alors qu'environ 2400 îles n'ont même pas encore reçu de nom.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 11,
-        "question": "Quel fleuve et importante voie fluviale bleuit selon la météo la capitale de la Hongrie ?",
-        "propositions": [
-            "Le Danube",
-            "Le Rhin",
-            "L'Elbe",
-            "Le Rhône"
-        ],
-        "anecdote": "En suivant le Danube qui forme alors la frontière entre la Hongrie et la Slovaquie, la première ville importante rencontrée est Gyor.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 12,
-        "question": "Quelle mer du bassin Indo-Pacifique est reliée à la Méditerranée par le canal de Suez ?",
-        "propositions": [
-            "Mer Rouge",
-            "Mer Noire",
-            "Mer Ionienne",
-            "Mer de Java"
-        ],
-        "anecdote": "Il arrive que ses eaux soient peuplées d'algues qui, lorsqu'elles meurent, donnent à l'eau une couleur rougeâtre.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 13,
-        "question": "Sachant que les Apennins se trouvent en Italie, où sont principalement situées les Appalaches ?",
-        "propositions": [
-            "Aux États-Unis",
-            "En Russie",
-            "Au Brésil",
-            "En Inde"
-        ],
-        "anecdote": "Les Appalaches séparent la plaine côtière atlantique (à l'est) du bassin du fleuve Mississippi et des Grands Lacs (à l'ouest).",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 14,
-        "question": "Quel fleuve d'Afrique occidentale, portant le nom d'un pays, borde le Sahel ?",
-        "propositions": [
-            "Le Niger",
-            "Le Congo",
-            "Le Zambèze",
-            "Le Sénégal"
-        ],
-        "anecdote": "Le fleuve Niger fait partie de ces fleuves (tout comme le Sénégal) qui ont été fortement aménagés depuis les années 1980.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 15,
-        "question": "Vers quel pays allez-vous si vous quittez la ville italienne de Trieste vers l'Est ?",
-        "propositions": [
-            "La Yougoslavie",
-            "La Suisse",
-            "L'Espagne",
-            "La Grèce"
-        ],
-        "anecdote": "Géographiquement, Trieste est considérée comme la « dernière ville du Nord-Est de l'Italie » ou comme la « ville de l'extrême Sud ».",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 16,
-        "question": "Quel port canadien situé sur le lac Ontario était jadis connu sous le nom de « Fort York » ?",
-        "propositions": [
-            "Toronto",
-            "Oshawa",
-            "Windsor",
-            "Hamilton"
-        ],
-        "anecdote": "Fort York fut construit à l'entrée du port naturel de la ville, abrité par un long banc de sable en forme de péninsule.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 17,
-        "question": "Dans quel État des États-Unis pourrez-vous partir à la rencontre des Séminoles ?",
-        "propositions": [
-            "Floride",
-            "Nevada",
-            "Michigan",
-            "Arkansas"
-        ],
-        "anecdote": "Les Amérindiens Calusa furent les premiers habitants de ces marais subtropicaux qu'ils baptisèrent « Pa-hay-okee » ou « eaux herbeuses ».",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 18,
-        "question": "Quelle mer dépourvue de poissons et d'algues est partagée entre la Jordanie et Israël ?",
-        "propositions": [
-            "Mer Morte",
-            "Mer Jaune",
-            "Mer Rouge",
-            "Mer Blanche"
-        ],
-        "anecdote": "Alors que la salinité moyenne de l'eau de mer oscille entre 2 et 4 %, celle de la mer Morte est d'approximativement 27.5 %.",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 19,
-        "question": "Où est Dubrovnik, dont les habitants ainsi que ce qui s'y rapporte s'appellent des ragusains ?",
-        "propositions": [
-            "En Yougoslavie",
-            "En Sibérie",
-            "En Roumanie",
-            "En Estonie"
-        ],
-        "anecdote": "De son ancien nom français Raguse, Dubrovnik a pour devise : « La liberté ne se vend pas même pour tout l'or du monde ».",
-        "difficulty": "confirmé"
-    },
-    {
-        "id": 20,
-        "question": "Sur quelle île à 120 km du sud de l'Angleterre se trouvent Grand Havre et Port Soif ?",
-        "propositions": [
-            "Guernesey",
-            "Ortac",
-            "Herm",
-            "Aurigny"
-        ],
-        "anecdote": "Victor Hugo a séjourné à Guernesey et y a écrit « Les Misérables » en 1862 et « Les Travailleurs de la mer » en 1866.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 21,
-        "question": "Dans quel pays peut-on par exemple passer une nuit à Mandalay et la suivante à Rangoon ?",
-        "propositions": [
-            "En Birmanie",
-            "Aux Philippines",
-            "En Malaisie",
-            "En Indonésie"
-        ],
-        "anecdote": "Capitale royale entre 1860 et 1885, réputée pour son jade, Mandalay était alors surnommée la « cité des joyaux ».",
-        "difficulty": "expert"
-    },
-    {
-        "id": 22,
-        "question": "Dans quel État du Midwest des États-Unis se trouvent Mineapolis et sa jumelle St Paul ?",
-        "propositions": [
-            "Le Minnesota",
-            "Le Missouri",
-            "Le Michigan",
-            "Le Montana"
-        ],
-        "anecdote": "Le mot « Minnesota » vient de « mnisota », nom donné au fleuve Minnesota par les Dakotas, tribu Sioux.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 23,
-        "question": "Vers quel lac la ville d'Irkoutsk plonge-t-elle son regard à 66 kilomètres à l'ouest ?",
-        "propositions": [
-            "Baïkal",
-            "Érié",
-            "Malawi",
-            "Tanganyika"
-        ],
-        "anecdote": "Irkoutsk se trouve dans une région de collines couvertes de taïga, paysage typique de la Sibérie orientale.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 24,
-        "question": "Quelle grande ville trouve-t-on sur la mer d'Oman, près de l'embouchure de l'Indus ?",
-        "propositions": [
-            "Karachi",
-            "Mingora",
-            "Burewala",
-            "Islamabad"
-        ],
-        "anecdote": "Karachi est l'une des villes les plus peuplées au monde et la plus peuplée du monde musulman.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 25,
-        "question": "Quelle capitale pakistanaise, située au nord du pays, jouxte la ville de Rawalpindi ?",
-        "propositions": [
-            "Islamabad",
-            "Quetta",
-            "Wah",
-            "Karachi"
-        ],
-        "anecdote": "Devenue en 1967 la capitale du pays, au détriment de Karachi, Islamabad en constitue le coeur administratif et politique.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 26,
-        "question": "Dans quel État américain du Nord-Est du pays se trouvent Rome, Syracuse et Albany ?",
-        "propositions": [
-            "New York",
-            "Idaho",
-            "Alabama",
-            "Maryland"
-        ],
-        "anecdote": "Si la ville de New York se trouve dans l'État de New York, sa principale agglomération se trouve dans les États voisins.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 27,
-        "question": "De quel pays situé à environ 200 km au nord de l'équateur Kuala Lumpur est-elle la capitale ?",
-        "propositions": [
-            "La Malaisie",
-            "Le Cambodge",
-            "Le Laos",
-            "La Birmanie"
-        ],
-        "anecdote": "Arrachée à la jungle dans les années 1850, la ville doit sa naissance et sa fortune aux abondants gisements d'étain.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 28,
-        "question": "Combien de mers baignent la Russie, le plus vaste pays de notre planète ?",
-        "propositions": [
-            "Douze",
-            "Six",
-            "Huit",
-            "Dix"
-        ],
-        "anecdote": "Bien qu'entourée de mers et de deux océans, la Russie est caractérisée par un climat continental aux milieux froids et hostiles.",
-        "difficulty": "expert"
-    },
-    {
-        "id": 29,
-        "question": "Sur quelle île se trouve Manille, deuxième ville la plus peuplée des Philippines après Quezon ?",
-        "propositions": [
-            "Luçon",
-            "Guam",
-            "Shikoku",
-            "Visayas"
-        ],
-        "anecdote": "La quasi totalité de la ville se trouve sur un sol alluvionnaire déplacé par la rivière Pasig et gagné sur la baie de Manille.",
-        "difficulty": "expert"
-    }
+  {
+    "id": 0,
+    "question": "Dans quel océan se déverse l'Amazone, de loin le plus élevé de tous les fleuves de la planète ?",
+    "propositions": [
+      "Océan Atlantique",
+      "Océan Arctique",
+      "Océan Indien",
+      "Océan Pacifique"
+    ],
+    "anecdote": "La démesure de l'Amazone s'apprécie aussi en constatant qu'aucun pont ni barrage ne le franchit sur des milliers de kilomètres.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 1,
+    "question": "Où peut-on se rendre dans la plus grande île et le plus petit continent du monde ?",
+    "propositions": [
+      "Australie",
+      "Asie",
+      "Afrique",
+      "Europe"
+    ],
+    "anecdote": "Sa population est principalement concentrée dans les grandes villes côtières de Sydney, Melbourne, Brisbane, Perth et Adélaïde.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 2,
+    "question": "Où peut-on marcher sur la place Tian'anmen, au sud de la porte de la Paix céleste ?",
+    "propositions": [
+      "Pékin",
+      "Shanghai",
+      "Shenzhen",
+      "Canton"
+    ],
+    "anecdote": "La place Tian'anmen doit notamment sa célébrité aux nombreux événements qui s'y sont déroulés dans l'histoire chinoise.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 3,
+    "question": "Quelle est la plus grande ville du Grand-Duché de Luxembourg ainsi que sa capitale ?",
+    "propositions": [
+      "Luxembourg",
+      "Wiltz",
+      "Diekirch",
+      "Vianden"
+    ],
+    "anecdote": "Après avoir été surnommée « la Gibraltar du Nord » en raison de sa forteresse, elle est dite aujourd'hui le « Coeur vert de l'Europe ».",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 4,
+    "question": "Quel pays sans côte océanique partage en toute tranquillité le lac Majeur avec l'Italie ?",
+    "propositions": [
+      "La Suisse",
+      "Le Danemark",
+      "La Pologne",
+      "L'Autriche"
+    ],
+    "anecdote": "Le lac Majeur est célèbre par ses sites touristiques comme les îles Borromées et les îles de Brissago.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 5,
+    "question": "Où se trouve Ankara, ville nouvelle aux origines pourtant très anciennes ?",
+    "propositions": [
+      "En Turquie",
+      "En Inde",
+      "En Birmanie",
+      "Au Pakistan"
+    ],
+    "anecdote": "Certains vestiges hittites découverts dans la citadelle attestent la présence d'une cité (Ankuva) du temps de l'Empire hittite.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 6,
+    "question": "Sur quel tropique se trouve Taiwan, connue comme la République de Chine ?",
+    "propositions": [
+      "Cancer",
+      "Sagittaire",
+      "Capricorne",
+      "Taureau"
+    ],
+    "anecdote": "Taïwan fut officiellement gouverné par la Chine de 1683 à 1895, puis cédé au Japon par le traité de Shimonoseki en 1895.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 7,
+    "question": "Quel est le pays entouré par le Lichtenstein, l'Italie, l'Autriche, l'Allemagne et la France ?",
+    "propositions": [
+      "La Suisse",
+      "Les Pays-Bas",
+      "La Grèce",
+      "La Hongrie"
+    ],
+    "anecdote": "La Suisse est un pays sans côte océanique mais dispose d'un accès direct à la mer par le Rhin (Convention de Mannheim).",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 8,
+    "question": "Dans quel pays allez-vous si vous partez à la recherche du comte Dragul, en Transylvanie ?",
+    "propositions": [
+      "En Roumanie",
+      "En Bulgarie",
+      "En Hongrie",
+      "En Australie"
+    ],
+    "anecdote": "Écrit à la fin du XIXe siècle, « Dracula » est un roman épistolaire dont le personnage principal est un vampire.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 9,
+    "question": "Quel tropique indiqué sur les cartes terrestres passe entre la Floride et Cuba ?",
+    "propositions": [
+      "Tropique du Cancer",
+      "Tropique du Lion",
+      "Tropique du Loup",
+      "Tropique du Chat"
+    ],
+    "anecdote": "Le tropique du Cancer porte ce nom car, il y a environ 2000 ans, le Soleil entrait dans la constellation du Cancer lors du solstice de juin.",
+    "difficulty": "débutant"
+  },
+  {
+    "id": 10,
+    "question": "Quel archipel du Pacifique est constitué de plus de 7100 îles et îlots formant un état ?",
+    "propositions": [
+      "Les Philippines",
+      "L'Indonésie",
+      "La Malaisie",
+      "La Birmanie"
+    ],
+    "anecdote": "Un peu plus de 2000 seulement sont habitées, alors qu'environ 2400 îles n'ont même pas encore reçu de nom.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 11,
+    "question": "Quel fleuve et importante voie fluviale bleuit selon la météo la capitale de la Hongrie ?",
+    "propositions": [
+      "Le Danube",
+      "Le Rhin",
+      "L'Elbe",
+      "Le Rhône"
+    ],
+    "anecdote": "En suivant le Danube qui forme alors la frontière entre la Hongrie et la Slovaquie, la première ville importante rencontrée est Gyor.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 12,
+    "question": "Quelle mer du bassin Indo-Pacifique est reliée à la Méditerranée par le canal de Suez ?",
+    "propositions": [
+      "Mer Rouge",
+      "Mer Noire",
+      "Mer Ionienne",
+      "Mer de Java"
+    ],
+    "anecdote": "Il arrive que ses eaux soient peuplées d'algues qui, lorsqu'elles meurent, donnent à l'eau une couleur rougeâtre.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 13,
+    "question": "Sachant que les Apennins se trouvent en Italie, où sont principalement situées les Appalaches ?",
+    "propositions": [
+      "Aux États-Unis",
+      "En Russie",
+      "Au Brésil",
+      "En Inde"
+    ],
+    "anecdote": "Les Appalaches séparent la plaine côtière atlantique (à l'est) du bassin du fleuve Mississippi et des Grands Lacs (à l'ouest).",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 14,
+    "question": "Quel fleuve d'Afrique occidentale, portant le nom d'un pays, borde le Sahel ?",
+    "propositions": [
+      "Le Niger",
+      "Le Congo",
+      "Le Zambèze",
+      "Le Sénégal"
+    ],
+    "anecdote": "Le fleuve Niger fait partie de ces fleuves (tout comme le Sénégal) qui ont été fortement aménagés depuis les années 1980.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 15,
+    "question": "Vers quel pays allez-vous si vous quittez la ville italienne de Trieste vers l'Est ?",
+    "propositions": [
+      "La Yougoslavie",
+      "La Suisse",
+      "L'Espagne",
+      "La Grèce"
+    ],
+    "anecdote": "Géographiquement, Trieste est considérée comme la « dernière ville du Nord-Est de l'Italie » ou comme la « ville de l'extrême Sud ».",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 16,
+    "question": "Quel port canadien situé sur le lac Ontario était jadis connu sous le nom de « Fort York » ?",
+    "propositions": [
+      "Toronto",
+      "Oshawa",
+      "Windsor",
+      "Hamilton"
+    ],
+    "anecdote": "Fort York fut construit à l'entrée du port naturel de la ville, abrité par un long banc de sable en forme de péninsule.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 17,
+    "question": "Dans quel État des États-Unis pourrez-vous partir à la rencontre des Séminoles ?",
+    "propositions": [
+      "Floride",
+      "Nevada",
+      "Michigan",
+      "Arkansas"
+    ],
+    "anecdote": "Les Amérindiens Calusa furent les premiers habitants de ces marais subtropicaux qu'ils baptisèrent « Pa-hay-okee » ou « eaux herbeuses ».",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 18,
+    "question": "Quelle mer dépourvue de poissons et d'algues est partagée entre la Jordanie et Israël ?",
+    "propositions": [
+      "Mer Morte",
+      "Mer Jaune",
+      "Mer Rouge",
+      "Mer Blanche"
+    ],
+    "anecdote": "Alors que la salinité moyenne de l'eau de mer oscille entre 2 et 4 %, celle de la mer Morte est d'approximativement 27.5 %.",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 19,
+    "question": "Où est Dubrovnik, dont les habitants ainsi que ce qui s'y rapporte s'appellent des ragusains ?",
+    "propositions": [
+      "En Yougoslavie",
+      "En Sibérie",
+      "En Roumanie",
+      "En Estonie"
+    ],
+    "anecdote": "De son ancien nom français Raguse, Dubrovnik a pour devise : « La liberté ne se vend pas même pour tout l'or du monde ».",
+    "difficulty": "confirmé"
+  },
+  {
+    "id": 20,
+    "question": "Sur quelle île à 120 km du sud de l'Angleterre se trouvent Grand Havre et Port Soif ?",
+    "propositions": [
+      "Guernesey",
+      "Ortac",
+      "Herm",
+      "Aurigny"
+    ],
+    "anecdote": "Victor Hugo a séjourné à Guernesey et y a écrit « Les Misérables » en 1862 et « Les Travailleurs de la mer » en 1866.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 21,
+    "question": "Dans quel pays peut-on par exemple passer une nuit à Mandalay et la suivante à Rangoon ?",
+    "propositions": [
+      "En Birmanie",
+      "Aux Philippines",
+      "En Malaisie",
+      "En Indonésie"
+    ],
+    "anecdote": "Capitale royale entre 1860 et 1885, réputée pour son jade, Mandalay était alors surnommée la « cité des joyaux ».",
+    "difficulty": "expert"
+  },
+  {
+    "id": 22,
+    "question": "Dans quel État du Midwest des États-Unis se trouvent Mineapolis et sa jumelle St Paul ?",
+    "propositions": [
+      "Le Minnesota",
+      "Le Missouri",
+      "Le Michigan",
+      "Le Montana"
+    ],
+    "anecdote": "Le mot « Minnesota » vient de « mnisota », nom donné au fleuve Minnesota par les Dakotas, tribu Sioux.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 23,
+    "question": "Vers quel lac la ville d'Irkoutsk plonge-t-elle son regard à 66 kilomètres à l'ouest ?",
+    "propositions": [
+      "Baïkal",
+      "Érié",
+      "Malawi",
+      "Tanganyika"
+    ],
+    "anecdote": "Irkoutsk se trouve dans une région de collines couvertes de taïga, paysage typique de la Sibérie orientale.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 24,
+    "question": "Quelle grande ville trouve-t-on sur la mer d'Oman, près de l'embouchure de l'Indus ?",
+    "propositions": [
+      "Karachi",
+      "Mingora",
+      "Burewala",
+      "Islamabad"
+    ],
+    "anecdote": "Karachi est l'une des villes les plus peuplées au monde et la plus peuplée du monde musulman.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 25,
+    "question": "Quelle capitale pakistanaise, située au nord du pays, jouxte la ville de Rawalpindi ?",
+    "propositions": [
+      "Islamabad",
+      "Quetta",
+      "Wah",
+      "Karachi"
+    ],
+    "anecdote": "Devenue en 1967 la capitale du pays, au détriment de Karachi, Islamabad en constitue le coeur administratif et politique.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 26,
+    "question": "Dans quel État américain du Nord-Est du pays se trouvent Rome, Syracuse et Albany ?",
+    "propositions": [
+      "New York",
+      "Idaho",
+      "Alabama",
+      "Maryland"
+    ],
+    "anecdote": "Si la ville de New York se trouve dans l'État de New York, sa principale agglomération se trouve dans les États voisins.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 27,
+    "question": "De quel pays situé à environ 200 km au nord de l'équateur Kuala Lumpur est-elle la capitale ?",
+    "propositions": [
+      "La Malaisie",
+      "Le Cambodge",
+      "Le Laos",
+      "La Birmanie"
+    ],
+    "anecdote": "Arrachée à la jungle dans les années 1850, la ville doit sa naissance et sa fortune aux abondants gisements d'étain.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 28,
+    "question": "Combien de mers baignent la Russie, le plus vaste pays de notre planète ?",
+    "propositions": [
+      "Douze",
+      "Six",
+      "Huit",
+      "Dix"
+    ],
+    "anecdote": "Bien qu'entourée de mers et de deux océans, la Russie est caractérisée par un climat continental aux milieux froids et hostiles.",
+    "difficulty": "expert"
+  },
+  {
+    "id": 29,
+    "question": "Sur quelle île se trouve Manille, deuxième ville la plus peuplée des Philippines après Quezon ?",
+    "propositions": [
+      "Luçon",
+      "Guam",
+      "Shikoku",
+      "Visayas"
+    ],
+    "anecdote": "La quasi totalité de la ville se trouve sur un sol alluvionnaire déplacé par la rivière Pasig et gagné sur la baie de Manille.",
+    "difficulty": "expert"
+  }
 ]

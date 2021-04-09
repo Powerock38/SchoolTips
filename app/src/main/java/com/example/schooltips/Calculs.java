@@ -54,6 +54,12 @@ public class Calculs {
 
                 do op2 = op2Format * random.nextInt(9);
                 while (op2 == 0 || op2 == prOp2);
+
+                if ((operation == Operation.subtract || operation == Operation.divide) && op1 < op2) {
+                    int tmp = op1;
+                    op1 = op2;
+                    op2 = tmp;
+                }
             }
 
             switch (operation) {

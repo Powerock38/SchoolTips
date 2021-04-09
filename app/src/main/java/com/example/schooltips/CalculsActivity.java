@@ -29,8 +29,8 @@ public class CalculsActivity extends AppCompatActivity {
     private Operation operation;
     private TextView questionCounter;
     private boolean isCorrection;
-    private int nbQuestionsDone = 0;
     private CountDownTimer timerObject;
+    private boolean shouldAskMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +74,16 @@ public class CalculsActivity extends AppCompatActivity {
         TextView timer = findViewById(R.id.timer);
         int time = intent.getIntExtra(TIMER_KEY, 0);
 
-        if(time > 0) {
+        if (time > 0) {
             timerObject = new CountDownTimer(time * 1000, 1000) {
                 public void onTick(long t) {
                     timer.setText(getString(R.string.seconde, 1 + (t / 1000)));
                 }
 
                 public void onFinish() {
+                    while (shouldAskMore) {
+                        shouldAskMore = calculs.nextCalcul(Integer.MAX_VALUE);
+                    }
                     byebye();
                 }
             };
@@ -98,8 +101,6 @@ public class CalculsActivity extends AppCompatActivity {
     }
 
     public void nextCalculView(View v) {
-        boolean shouldAskMore;
-
         if (v == null) {
             shouldAskMore = calculs.nextCalcul(null);
         } else {
@@ -107,10 +108,9 @@ public class CalculsActivity extends AppCompatActivity {
             try {
                 rep = parseInt(answer.getText().toString());
             } catch (NumberFormatException e) {
-                rep = 0;
+                rep = Integer.MAX_VALUE;
             }
             shouldAskMore = calculs.nextCalcul(rep);
-            nbQuestionsDone++;
         }
 
         if (shouldAskMore) {
@@ -124,7 +124,7 @@ public class CalculsActivity extends AppCompatActivity {
 
     private void byebye() {
         Intent intent = new Intent(this, ResultatsActivity.class);
-        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, nbQuestionsDone);
+        intent.putExtra(ResultatsActivity.NB_QUESTIONS_KEY, calculs.getNbQuestions());
         ArrayList<CoupleOperandes> erreurs = calculs.getListeErreurs();
         intent.putExtra(ResultatsActivity.NB_ERREURS_KEY, erreurs.size());
         if (!erreurs.isEmpty()) {
@@ -140,6 +140,6 @@ public class CalculsActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        if(timerObject != null) timerObject.cancel();
+        if (timerObject != null) timerObject.cancel();
     }
 }
